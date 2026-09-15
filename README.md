@@ -7,7 +7,7 @@
 
 TUI · HIBP check · encrypted history · shell completions · 5 ms startup
 
-[![CI](https://github.com/yourname/passgen/actions/workflows/ci.yml/badge.svg)](https://github.com/yourname/passgen/actions/workflows/ci.yml)
+
 [![Release](https://img.shields.io/github/v/release/yourname/passgen?color=blue)](https://github.com/yourname/passgen/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Java](https://img.shields.io/badge/Java-21-orange?logo=openjdk)](https://openjdk.org/projects/jdk/21/)
