@@ -1,0 +1,5 @@
+#!/bin/sh
+# passgen launcher — locates its own jar relative to where it was installed,
+# so it works under any PREFIX (~/.local, /usr/local, /usr, ...).
+BINDIR="$(dirname "$(readlink -f "$0")")"
+exec java -jar "$BINDIR/../share/passgen/passgen.jar" "$@"

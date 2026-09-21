@@ -20,7 +20,7 @@ Zero external dependencies — JDK standard library only.
 ## English
 
 #### Contents
-[Features](#features) · [Build & run](#build--run) · [Data storage](#data-storage) · [Project structure](#project-structure) · [License](#license)
+[Features](#features) · [Build & run](#build--run) · [Install](#install) · [Data storage](#data-storage) · [Project structure](#project-structure) · [License](#license)
 
 ### Features
 
@@ -51,6 +51,27 @@ java -cp out passgen.Main
 make jar
 java -jar passgen.jar
 ```
+
+### Install
+
+To get a plain `passgen` command usable from anywhere:
+
+```sh
+make install              # installs to ~/.local by default
+# make sure ~/.local/bin is on your PATH, then:
+passgen
+```
+
+`make install` builds the jar, drops it in `$PREFIX/share/passgen/passgen.jar`
+and installs a small self-locating launcher script at `$PREFIX/bin/passgen`
+(the script finds its jar relative to its own path, so it works under any
+prefix). Override the prefix for a system-wide install:
+
+```sh
+sudo make PREFIX=/usr/local install
+```
+
+`make uninstall` (with the same `PREFIX`) removes both files.
 
 ### Data storage
 
@@ -87,7 +108,7 @@ MIT — see [LICENSE](LICENSE).
 ## Русский
 
 #### Оглавление
-[Возможности](#возможности) · [Сборка и запуск](#сборка-и-запуск) · [Хранение данных](#хранение-данных) · [Структура](#структура) · [Лицензия](#лицензия)
+[Возможности](#возможности) · [Сборка и запуск](#сборка-и-запуск) · [Установка](#установка) · [Хранение данных](#хранение-данных) · [Структура](#структура) · [Лицензия](#лицензия)
 
 ### Возможности
 
@@ -119,6 +140,27 @@ java -cp out passgen.Main
 make jar
 java -jar passgen.jar
 ```
+
+### Установка
+
+Чтобы получить обычную команду `passgen`, запускаемую из любого места:
+
+```sh
+make install              # ставит в ~/.local по умолчанию
+# убедись, что ~/.local/bin в PATH, дальше просто:
+passgen
+```
+
+`make install` собирает jar, кладёт его в `$PREFIX/share/passgen/passgen.jar`
+и ставит небольшой скрипт-лаунчер в `$PREFIX/bin/passgen` — он сам находит
+свой jar относительно собственного пути, так что работает при любом
+префиксе. Для системной установки:
+
+```sh
+sudo make PREFIX=/usr/local install
+```
+
+`make uninstall` (с тем же `PREFIX`) удаляет оба файла.
 
 ### Хранение данных
 
