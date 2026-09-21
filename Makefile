@@ -1,21 +1,21 @@
 JAVAC := javac
 JAVA  := java
-SRC   := $(wildcard src/warden/*.java)
+SRC   := $(wildcard src/passgen/*.java)
 OUT   := out
 
 .PHONY: all run jar clean
 
-all: $(OUT)/warden/Main.class
+all: $(OUT)/passgen/Main.class
 
-$(OUT)/warden/Main.class: $(SRC)
+$(OUT)/passgen/Main.class: $(SRC)
 	@mkdir -p $(OUT)
 	$(JAVAC) -d $(OUT) $(SRC)
 
 run: all
-	$(JAVA) -cp $(OUT) warden.Main
+	$(JAVA) -cp $(OUT) passgen.Main
 
 jar: all
-	jar --create --file warden.jar --main-class warden.Main -C $(OUT) .
+	jar --create --file passgen.jar --main-class passgen.Main -C $(OUT) .
 
 clean:
-	rm -rf $(OUT) warden.jar
+	rm -rf $(OUT) passgen.jar
